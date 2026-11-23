@@ -1,0 +1,34 @@
+Week-7: SUPPLIER DATABASE
+The supplier database must store information about suppliers, the parts they provide, and the
+prices at which each part is offered so that purchasing, analysis, and reporting can be done
+accurately. Each supplier is uniquely identified by a supplier ID and is recorded with a name
+and the city in which the supplier is located; each part is uniquely identified by a part ID and
+includes a part name and a color. The system must maintain a catalog that links suppliers to
+the parts they supply and records the cost at which a given supplier sells a given part. Every
+catalog entry must reference an existing supplier and an existing part, and there must be no
+duplicate entries for the same combination of supplier and part, so that at most one current
+price record exists per supplier–part pair. Costs must be valid numeric values and strictly
+non-negative, and business rules may specify upper limits or currency formats that must be
+enforced consistently. The data model must support the possibility that a supplier can provide
+many different parts, that a part can be supplied by many different suppliers, and that some
+suppliers or parts may
+temporarily have no catalog entries if they are inactive or not currently traded. Referential
+integrity must be enforced so that a supplier or part cannot be deleted while still referenced in
+the catalog unless such deletion is handled by controlled archival or cascade rules that
+preserve historical price information; in general, historical catalog data should not be lost, as
+it may be required for audits or trend analysis. The system should allow queries such as “find
+all suppliers for a given part,” “list all parts provided by a given supplier,” “retrieve the
+cheapest supplier for each part,” and “analyze supplier coverage by city,” and must therefore
+guarantee that identifiers are unique, relationships between suppliers, parts, and catalog
+entries are consistent, and price information is accurate and reliably maintained over time.
+Write the following queries in SQL:
+1. Using Scheme diagram, Create tables by properly specifying the primary keys and the
+foreign keys.
+2. Insert appropriate records in each table.
+3. Find the pnames of parts for which there is some supplier.
+4. Find the snames of suppliers who supply every part.
+5. Find the snames of suppliers who supply every red part.
+6. Find the pnames of parts supplied by Acme Widget Suppliers and by no one else.
+7. Find the sids of suppliers who charge more for some part than the average cost of that
+part (averaged over all the suppliers who supply that part).
+8. For each part, find the sname of the supplier who charges the most for that part.
